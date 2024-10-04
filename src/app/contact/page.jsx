@@ -38,7 +38,7 @@ const Contact = () => {
           <div className="mb-4">
             <h3 className="text-xl font-semibold">Our Message</h3>
             <p>
-              "Your success is our priority. Reach out to us anytime for support on your learning journey."
+              &quot;Your success is our priority. Reach out to us anytime for support on your learning journey.&quot;
             </p>
           </div>
         </section>

@@ -20,7 +20,7 @@ const EnrolledStudents = () => {
        if(course){
         setCourses(course);
        }
-    }, [])
+    }, [students])
   
 
   return (
@@ -42,7 +42,7 @@ const EnrolledStudents = () => {
              {courses.map((course, index) => (
           
             
-            <p>
+            <p key={index}>
                {course}
             </p>
           

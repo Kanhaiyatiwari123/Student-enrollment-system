@@ -12,7 +12,7 @@ const IntroSection = () => {
 
         {/* Description */}
         <p className="text-lg mb-6 text-gray-700">
-          Join our platform to enroll in a variety of computer science courses designed to boost your skills and career prospects. Whether you're a beginner or looking to advance your knowledge, we have the right courses for you.
+          Join our platform to enroll in a variety of computer science courses designed to boost your skills and career prospects. Whether you&apos;re a beginner or looking to advance your knowledge, we have the right courses for you.
         </p>
 
         {/* Register Button */}
