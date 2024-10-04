@@ -13,7 +13,7 @@ const Contact = () => {
           <h2 className="text-2xl font-semibold mb-2">Get in Touch</h2>
           <p className="mb-4">
             If you have any questions or need assistance, feel free to reach out to us. 
-            We're here to help you with your enrollment process and any other inquiries you might have.
+            We&apos;re here to help you with your enrollment process and any other inquiries you might have.
           </p>
 
           {/* Email Address */}
