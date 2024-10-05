@@ -67,7 +67,7 @@ const Profile = () => {
     <div className="min-h-screen flex items-center justify-center bg-[url('https://cdn.pixabay.com/photo/2023/10/24/19/09/nevada-8338929_1280.jpg')] bg-cover bg-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-6 rounded shadow-md w-full max-w-md mt-3">
+        className="bg-white p-6 rounded shadow-md w-full max-w-md mt-3 sm:max-w-sm md:max-w-md lg:max-w-xl xl:max-w-xl space-y-4">
         <h2 className="text-2xl font-bold mb-6">Edit Profile</h2>
 
         {/* First Name Field */}
@@ -189,7 +189,7 @@ const Profile = () => {
 
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full sm:w-auto"
         >
           Update Profile
         </button>

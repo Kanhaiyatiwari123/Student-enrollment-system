@@ -27,7 +27,7 @@ const ProfilePage = () => {
 
   // If no data is available
   if (!studentData) {
-    return <div>No student data available. Please register and select courses.</div>;
+    return <div className="flex justify-center items-center min-h-screen">No student data available. Please register and select courses.</div>;
   }
 
   const navigateTo = () => {
@@ -35,38 +35,37 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#b3a49c]">
-      <div className="bg-white p-6 rounded shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6">Student Profile</h2>
+    <div className="min-h-screen flex items-center justify-center bg-[#b3a49c] p-4">
+      <div className="bg-white p-6 rounded shadow-md w-full max-w-md sm:max-w-lg lg:max-w-lg">
+        <h2 className="text-2xl font-bold mb-6 text-center">Student Profile</h2>
         
         {/* Displaying student details */}
-        <div className='bg-white pb-5 rounded w-full max-w-md'>
+        <div className="mb-4">
           <p><strong>Name:</strong> {studentData.firstName} {studentData.lastName}</p>
         </div>
-        <div className='bg-white pb-5 rounded w-full max-w-md'>  
+        <div className="mb-4">
           <p><strong>Email:</strong> {studentData.email}</p>
         </div>
-        <div className='bg-white pb-5 rounded w-full max-w-md'>   
+        <div className="mb-4">
           <p><strong>Phone:</strong> {studentData.phoneNumber}</p>
         </div>
-        <div className='bg-white pb-5 rounded w-full max-w-md'>    
+        <div className="mb-4">
           <p><strong>Age:</strong> {studentData.age}</p>
         </div>
-        <div className='bg-white pb-5 rounded w-full max-w-md'>    
+        <div className="mb-4">
           <p><strong>Address:</strong> {studentData.address}</p>
         </div>
-        <div className='bg-white pb-5 rounded w-full max-w-md'>    
+        <div className="mb-4">
           <p><strong>City:</strong> {studentData.city}</p>
-        </div>    
-        <div className='bg-white pb-5 rounded w-full max-w-md'>    
+        </div>
+        <div className="mb-4">
           <p><strong>Mode:</strong> {studentData.mode}</p>
-        </div>    
-        
-      
+        </div>
+
         <h3 className="text-xl font-bold mt-3">Selected Courses:</h3>
         
         {/* Displaying selected courses */}
-        <ul>
+        <ul className="list-disc pl-5">
           {selectedCourses.length > 0 ? (
             selectedCourses.map((course, index) => (
               <li key={index}>{course}</li>
@@ -76,12 +75,19 @@ const ProfilePage = () => {
           )}
         </ul>
         
-        <button onClick={navigateTo} className="bg-blue-500 text-white py-2 px-4 rounded mt-5">Edit Profile</button>
+        <div className="flex flex-col sm:flex-row justify-between mt-5 gap-3">
+          <button 
+            onClick={navigateTo} 
+            className="bg-blue-500 text-white py-2 px-4 rounded w-full sm:w-auto">
+            Edit Profile
+          </button>
 
-        <button onClick={() => router.push("/course")}
-          className="bg-blue-500 text-white py-2 px-4 rounded mt-5 float-end">
-          {'<'} Course Selection
-        </button>
+          <button 
+            onClick={() => router.push("/course")} 
+            className="bg-blue-500 text-white py-2 px-4 rounded w-full sm:w-auto">
+            {'<'} Course Selection
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import React from "react";
 import { useForm } from "react-hook-form"; // Importing React Hook Form
 import { zodResolver } from "@hookform/resolvers/zod"; // Resolver to use Zod with React Hook Form
 import { useRouter } from "next/navigation";
-import registrationSchema from "@/schemas/registerSchema"
+import registrationSchema from "@/schemas/registerSchema";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -25,13 +25,16 @@ const Register = () => {
     localStorage.setItem('studentData', JSON.stringify(data));
     console.log('Data saved to localStorage:');
 
-    router.push("/course");       //navigating to course page
+    router.push("/course"); // Navigating to course page
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#d2d0d1]">
-      <form onSubmit={handleSubmit(onSubmit)} className="bg-[#fbf9fc] p-6 rounded shadow-md w-full max-w-md mt-3">
-        <h2 className="text-2xl font-bold mb-6">Student Registration</h2>
+      <form 
+        onSubmit={handleSubmit(onSubmit)} 
+        className="bg-[#fbf9fc] p-6 rounded shadow-md w-full max-w-md mt-3 sm:max-w-sm md:max-w-md lg:max-w-xl xl:max-w-xl space-y-4"
+      >
+        <h2 className="text-2xl font-bold mb-6 text-center">Student Registration</h2>
 
         {/* First Name Field */}
         <div className="mb-4">
@@ -44,7 +47,7 @@ const Register = () => {
           />
           {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName.message}</p>}
         </div>
-       
+        
         {/* Last Name Field */}
         <div className="mb-4">
           <label htmlFor="lastName" className="block text-sm font-medium">Last Name</label>
@@ -82,7 +85,7 @@ const Register = () => {
         </div>
 
          {/* Confirm Password */}
-           <div className="mb-4">
+        <div className="mb-4">
           <label htmlFor="confirmPassword" className="block text-sm font-medium">Confirm Password</label>
           <input
             id="confirmPassword"
@@ -117,64 +120,33 @@ const Register = () => {
           {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>}
         </div>
 
-           {/* Address Field */}
-           <div className="mb-4">
-          <label htmlFor="address" className="block text-sm font-medium">
-            Address
-          </label>
+        {/* Address Field */}
+        <div className="mb-4">
+          <label htmlFor="address" className="block text-sm font-medium">Address</label>
           <input
             id="address"
             type="text"
             {...register("address")}
             className="mt-1 block w-full p-2 border border-gray-300 rounded"
           />
-          {errors.address && (
-            <p className="text-red-500 text-sm">{errors.address.message}</p>
-          )}
+          {errors.address && <p className="text-red-500 text-sm">{errors.address.message}</p>}
         </div>
-           
-           {/* City Field */}
-           <div className="mb-4">
-          <label htmlFor="city" className="block text-sm font-medium">
-            City
-          </label>
+        
+        {/* City Field */}
+        <div className="mb-4">
+          <label htmlFor="city" className="block text-sm font-medium">City</label>
           <input
             id="city"
             type="text"
             {...register("city")}
             className="mt-1 block w-full p-2 border border-gray-300 rounded"
           />
-          {errors.city && (
-            <p className="text-red-500 text-sm">{errors.city.message}</p>
-          )}
+          {errors.city && <p className="text-red-500 text-sm">{errors.city.message}</p>}
         </div>
 
-         {/* Course Preference Field */}
-         {/* <div className="mb-4">
-          <label htmlFor="course" className="block text-sm font-medium">
-            Course Preference
-          </label>
-          <select
-            id="course"
-            {...register("course")}
-            className="mt-1 block w-full p-2 border border-gray-300 rounded">
-            <option value="">Select a course</option>
-            <option value="Intro to Programming">Intro to Programming</option>
-            <option value="Data Structures">Data Structures</option>
-            <option value="Algorithms">Algorithms</option>
-            <option value="Database Systems">Database Systems</option>
-            <option value="Operating Systems">Operating Systems</option>
-          </select>
-          {errors.course && (
-            <p className="text-red-500 text-sm">{errors.course.message}</p>
-          )}
-        </div> */}
-
-          {/* Preferred Mode of Study Field */}
-           <div className="mb-4">
-          <label htmlFor="mode" className="block text-sm font-medium">
-            Preferred Mode of Study
-          </label>
+        {/* Preferred Mode of Study Field */}
+        <div className="mb-4">
+          <label htmlFor="mode" className="block text-sm font-medium">Preferred Mode of Study</label>
           <select
             id="mode"
             {...register("mode")}
@@ -184,23 +156,19 @@ const Register = () => {
             <option value="Online">Online</option>
             <option value="Offline">Offline</option>
           </select>
-          {errors.mode && (
-            <p className="text-red-500 text-sm">{errors.mode.message}</p>
-          )}
-        </div>-
+          {errors.mode && <p className="text-red-500 text-sm">{errors.mode.message}</p>}
+        </div>
 
         {/* Submit Button */}
-        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">Register</button>
-
+        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded w-full sm:w-auto">Register</button>
 
         <div className="text-center mt-5">
-        <p className="mb-2">Already registered? Login Now</p>
-        <Button variant="secondary" className=" bg-purple-600 hover:bg-purple-900 text-white py-2 px-4 rounded" asChild>
+          <p className="mb-2">Already registered? Login Now</p>
+          <Button variant="secondary" className="bg-purple-600 hover:bg-purple-900 text-white py-2 px-4 rounded w-full sm:w-auto" asChild>
             <Link href="/login">Login here</Link>
-        </Button> 
-      </div>
+          </Button>
+        </div>
       </form>
-
     </div>
   );
 };

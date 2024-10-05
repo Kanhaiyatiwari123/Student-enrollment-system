@@ -2,7 +2,7 @@
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <div className="bg-[#f7f7f7] p-6 rounded shadow-md w-full max-w-2xl">
+      <div className="bg-[#f7f7f7] p-6 rounded shadow-md w-full max-w-2xl md:max-w-3xl lg:max-w-3xl">
         <h1 className="text-3xl text-center font-bold mb-4">About Us</h1>
         
         {/* About Us Section */}

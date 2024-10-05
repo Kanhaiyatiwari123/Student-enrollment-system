@@ -38,7 +38,7 @@ const CourseSelection = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-[url('https://cdn.pixabay.com/photo/2024/04/12/08/22/background-8691370_1280.png')] bg-cover bg-center">
       
-      <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-6 rounded shadow-md w-full max-w-md">
+      <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-6 rounded shadow-md w-full max-w-md md:max-w-lg lg:max-w-xl">
       <h2 className="text-2xl font-bold mb-4 text-center">Course Selection</h2>
         <div className="mb-4">
         {courses.map((course, index) => (
@@ -58,7 +58,7 @@ const CourseSelection = () => {
         </div>
 
 
-        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">Select Courses</button>
+        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded w-full md:w-auto">Select Courses</button>
       </form>
     </div>
   );
